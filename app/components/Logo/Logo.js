@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, ImageBackground, Image } from 'react-native';
 
 // Styles Imports------------------>>>>
-import { styles } from './styles';
+import styles from './styles';
 
 // Logo Component-------------------->>>>
 const Logo = () => (
