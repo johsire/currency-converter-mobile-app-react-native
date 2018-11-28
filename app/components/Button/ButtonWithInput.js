@@ -1,4 +1,4 @@
 import { } from 'react-native';
 
 
-const ButtonWithInput = () => <view></view>
+const ButtonWithInput = () => <View></View>
