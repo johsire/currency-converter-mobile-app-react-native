@@ -4,12 +4,15 @@ import { StatusBar } from 'react-native';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import { InputWithButton } from '../components/TextInput';
-import { ClearButton } from "../components/Buttons";
+import { ClearButton } from '../components/Buttons';
+import { LastConverted } from '../components/Text/LastConverted';
 
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
 const TEMP_BASE_PRICE = '100';
 const TEMP_QUOTE_PRICE = '79.74';
+const TEMP_CONVERSION_RATE = 0.7974;
+const TEMP_CONVERSION_DATE = new Date();
 
 export default class Home extends Component {
   handlePressBaseCurrency = () => {
@@ -45,6 +48,12 @@ export default class Home extends Component {
         buttonText={TEMP_QUOTE_CURRENCY}
         editable={false}
         value={TEMP_QUOTE_PRICE}
+      />
+      <LastConverted 
+        base={TEMP_BASE_CURRENCY}
+        quote={TEMP_QUOTE_CURRENCY}
+        date={TEMP_CONVERSION_DATE}
+        conversionRate={TEMP_CONVERSION_RATE}
       />
       <ClearButton 
         text="Reverse Currencies"
