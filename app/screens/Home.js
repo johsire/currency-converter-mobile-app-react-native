@@ -23,6 +23,10 @@ export default class Home extends Component {
   handleTextChange = (text) => {
     console.log('change text', text);
   };
+
+  handleSwapCurrency = () => {
+    console.log('press swap currency');
+  };
   
  render() {
   return (
@@ -41,7 +45,11 @@ export default class Home extends Component {
         buttonText={TEMP_QUOTE_CURRENCY}
         editable={false}
         value={TEMP_QUOTE_PRICE}
-     />
+      />
+      <ClearButton 
+        text="Reverse Currencies"
+        onPress={this.handleSwapCurrency}
+      />
     </Container>
   );
  };
