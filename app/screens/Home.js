@@ -1,6 +1,8 @@
+// Downloaded/ Imported Dependencies --------------->>>>>>>>>>
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, KeyboardAvoidingView } from 'react-native';
 
+// Rendered Components ----------------------------->>>>>>>>>
 import { Header } from '../components/Header';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -8,6 +10,7 @@ import { InputWithButton } from '../components/TextInput';
 import { ClearButton } from '../components/Buttons';
 import { LastConverted } from '../components/Text';
 
+// CONST Variables ------------------------>>>>>>>>>>>>>>>
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
 const TEMP_BASE_PRICE = '100';
@@ -43,6 +46,7 @@ export default class Home extends Component {
       <Header
         onPress={this.handleOptionsPress}
       />
+      <KeyboardAvoidingView behavior="padding">
      <Logo />
      <InputWithButton
         buttonText={TEMP_BASE_CURRENCY}
@@ -67,6 +71,7 @@ export default class Home extends Component {
         text="Reverse Currencies"
         onPress={this.handleSwapCurrency}
       />
+      </KeyboardAvoidingView>
     </Container>
   );
  };
