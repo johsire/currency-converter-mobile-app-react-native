@@ -22,7 +22,7 @@ export default class Home extends Component {
   handlePressBaseCurrency = () => {
     console.log('press base');
   };
-  
+
   handlePressQuoteCurrency = () => {
     console.log('press quote');
   };
@@ -38,7 +38,7 @@ export default class Home extends Component {
   handleOptionsPress = () => {
     console.log('handle options press');
   };
-  
+
  render() {
   return (
     <Container>
@@ -56,18 +56,18 @@ export default class Home extends Component {
         onChangeText={this.handleTextChange}
      />
       <InputWithButton
-        onPress={this.handlePressQuoteCurrency}        
+        onPress={this.handlePressQuoteCurrency}
         buttonText={TEMP_QUOTE_CURRENCY}
         editable={false}
         value={TEMP_QUOTE_PRICE}
       />
-      <LastConverted 
+      <LastConverted
         base={TEMP_BASE_CURRENCY}
         quote={TEMP_QUOTE_CURRENCY}
         date={TEMP_CONVERSION_DATE}
         conversionRate={TEMP_CONVERSION_RATE}
       />
-      <ClearButton 
+      <ClearButton
         text="Reverse Currencies"
         onPress={this.handleSwapCurrency}
       />
