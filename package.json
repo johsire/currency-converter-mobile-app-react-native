@@ -20,7 +20,7 @@
 		"prop-types": "^15.6.2",
 		"react": "^16.6.1",
 		"react-native": "^0.57.6",
-		"react-native-extended-stylesheet": "0.8.0",
+		"react-native-extended-stylesheet": "^0.8.0",
 		"react-native-maps": "^0.22.1"
 	},
 	"devDependencies": {
