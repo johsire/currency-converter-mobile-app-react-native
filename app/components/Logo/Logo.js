@@ -1,14 +1,14 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import {
   View, Text, Keyboard, Animated, Platform, StyleSheet,
-} from "react-native";
+} from 'react-native';
 
-import styles from "./styles";
+import styles from './styles';
 
 const ANIMATION_DURATION = 250;
 
-export default class Logo extends Component {
+class Logo extends Component {
   static propTypes = {
     tintColor: PropTypes.string,
   };
@@ -23,14 +23,14 @@ export default class Logo extends Component {
   }
 
   componentDidMount() {
-    const name = Platform.OS === "ios" ? "Will" : "Did";
+    const name = Platform.OS === 'ios' ? 'Will' : 'Did';
     this.keyboardDidShowListener = Keyboard.addListener(
       `keyboard${name}Show`,
-      this.keyboardWillShow
+      this.keyboardWillShow,
     );
     this.keyboardDidHideListener = Keyboard.addListener(
       `keyboard${name}Hide`,
-      this.keyboardWillHide
+      this.keyboardWillHide,
     );
   }
 
@@ -75,21 +75,12 @@ export default class Logo extends Component {
 
     const containerImageStyles = [
       styles.containerImage,
-      {
-        width: containerImageWidth,
-        height: containerImageWidth,
-      },
+      { width: containerImageWidth, height: containerImageWidth },
     ];
     const imageStyles = [
       styles.logo,
-      {
-        width: imageWidth,
-      },
-          tintColor ? 
-      {
-          tintColor,
-      }
-          :null,
+      { width: imageWidth },
+      tintColor ? { tintColor } : null,
     ];
 
     return (
@@ -98,16 +89,18 @@ export default class Logo extends Component {
           <Animated.Image
             resizeMode="contain"
             style={[StyleSheet.absoluteFill, containerImageStyles]}
-            source={require("./images/background.png")}
+            source={require('./images/background.png')}
           />
           <Animated.Image
             resizeMode="contain"
             style={imageStyles}
-            source={require("./images/logo.png")}
+            source={require('./images/logo.png')}
           />
         </Animated.View>
-        <Text style={styles.text}> Currency Converter </Text>
+        <Text style={styles.text}>Currency Converter</Text>
       </View>
     );
-  };
-};
+  }
+}
+
+export default Logo;

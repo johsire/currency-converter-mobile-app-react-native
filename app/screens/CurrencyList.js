@@ -22,13 +22,14 @@ class CurrencyList extends Component {
             <ListItem
               text={item}
               selected={item === TEMP_CURRENT_CURRENCY}
+              omPress={this.handlePress}
             />
           )}
           keyExtractor={item => item}
         />
       </View>
     );
-  }
-}
+  };
+};
 
 export default CurrencyList;
