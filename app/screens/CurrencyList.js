@@ -1,4 +1,6 @@
-/* eslint-disable class-methods-use-this */
+
+/* eslint-disable react/jsx-filename-extension */
+
 import React, { Component } from 'react';
 import { FlatList, StatusBar, View } from 'react-native';
 
@@ -9,6 +11,7 @@ const TEMP_CURRENT_CURRENCY = 'CAD';
 
 class CurrencyList extends Component {
   handlePress = () => {
+    // eslint-disable-next-line no-console
     console.log('row press');
   };
 
@@ -30,7 +33,7 @@ class CurrencyList extends Component {
         />
       </View>
     );
-  };
-};
+  }
+}
 
 export default CurrencyList;
