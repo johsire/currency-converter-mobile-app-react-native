@@ -1,3 +1,4 @@
+
 // Currencies Hard-Coded Values;
 export default [
   'AUD',
