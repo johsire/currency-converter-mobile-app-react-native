@@ -3,8 +3,10 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ScrollView, StatusBar, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import {
+  ScrollView, StatusBar, Platform, Linking,
+} from 'react-native';
 
 import { ListItem, Separator } from '../components/List';
 
@@ -23,8 +25,7 @@ class Options extends Component {
   };
 
   handlePressSite = () => {
-    // eslint-disable-next-line no-console
-    console.log('press site');
+    Linking.openURL('http://fixer.io').catch(() => alert('An error occured.'));
   };
 
   render() {
