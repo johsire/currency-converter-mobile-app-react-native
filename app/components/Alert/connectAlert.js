@@ -1,12 +1,12 @@
 
 /* eslint-disable react/jsx-filename-extension */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 const connectAlert = (WrappedComponent) => {
-  class ConnectedAlert extends Component {
+  class ConnectedAlert extends PureComponent {
     render() {
       return (
         <WrappedComponent

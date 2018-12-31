@@ -16,6 +16,9 @@ import { InputWithButton } from '../components/TextInput';
 import { ClearButton } from '../components/Buttons';
 import { LastConverted } from '../components/Text';
 
+// Redux- Actions --------------------->>>>>>>>>>>
+import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
+
 // CONST Variables ------------------------>>>>>>>>>>>>>>>
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
@@ -29,8 +32,9 @@ class Home extends Component {
     navigation: PropTypes.object,
   };
 
-  handleChangeText = () => {
-    console.log('change text');
+  handleChangeText = (amount) => {
+    // TODO: make this work with this.props.dispatch
+    console.log(changeCurrencyAmount(amount));
   };
 
   handlePressBaseCurrency = () => {
@@ -44,11 +48,8 @@ class Home extends Component {
   };
 
   handleSwapCurrency = () => {
-    console.log('handle swap currency');
-  };
-
-  handleSwapCurrency = () => {
-    console.log('handle swap currency');
+    // TODO: make this work with this.props.dispatch
+    console.log(swapCurrency());
   };
 
   handleOptionsPress = () => {

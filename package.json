@@ -25,7 +25,10 @@
 		"react-native-dropdownalert": "3.1.2",
 		"react-native-extended-stylesheet": "^0.8.1",
 		"react-native-maps": "^0.22.1",
-		"react-navigation": "2.5.5"
+		"react-navigation": "2.5.5",
+		"react-redux": "6.0.0",
+		"redux": "4.0.1",
+		"redux-logger": "3.0.6"
 	},
 	"devDependencies": {
 		"ajv": "^5.5.2",
