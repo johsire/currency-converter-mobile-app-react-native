@@ -1,9 +1,9 @@
 
-/* eslint-disable no-console */
 /* eslint-disable react/jsx-filename-extension */
 
 // Downloaded/ Imported Dependencies --------------->>>>>>>>>>
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { StatusBar, KeyboardAvoidingView } from 'react-native';
 
 // Rendered Components ----------------------------->>>>>>>>>
@@ -22,17 +22,23 @@ const TEMP_QUOTE_PRICE = '79.74';
 const TEMP_CONVERSION_RATE = 0.7974;
 const TEMP_CONVERSION_DATE = new Date();
 
-export default class Home extends Component {
-  handlePressBaseCurrency = () => {
-    console.log('press base');
+class Home extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
+
+  handleChangeText = () => {
+    console.log('change text');
   };
 
   handlePressQuoteCurrency = () => {
-    console.log('press quote');
+    const newLocal = this;
+    newLocal.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' });
   };
 
-  handleTextChange = (text) => {
-    console.log('change text', text);
+  handlePressBaseCurrency = () => {
+    const newLocal = this;
+    newLocal.props.navigation.navigate('CurrencyList', { title: 'Base Currency' });
   };
 
   handleSwapCurrency = () => {
@@ -40,7 +46,7 @@ export default class Home extends Component {
   };
 
   handleOptionsPress = () => {
-    console.log('handle options press');
+    console.log('options press');
   };
 
   render() {
@@ -57,7 +63,7 @@ export default class Home extends Component {
             onPress={this.handlePressBaseCurrency}
             defaultValue={TEMP_BASE_PRICE}
             keyboardType="numeric"
-            onChangeText={this.handleTextChange}
+            onChangeText={this.handleChangeText}
           />
           <InputWithButton
             onPress={this.handlePressQuoteCurrency}
@@ -80,3 +86,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home;

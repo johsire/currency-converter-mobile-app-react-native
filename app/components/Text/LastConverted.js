@@ -3,8 +3,8 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-filename-extension */
 
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Text } from 'react-native';
 import moment from 'moment';
 
@@ -15,12 +15,19 @@ const LastConverted = ({
 }) => (
   <Text style={styles.smallText}>
     1
+    {' '}
     {base}
-=
+    {' '}
+    =
+    {' '}
     {conversionRate}
+    {' '}
     {quote}
-as of
+    {' '}
+    as of
+    {' '}
     {moment(date).format('MMMM D, YYYY')}
+    {' '}
   </Text>
 );
 

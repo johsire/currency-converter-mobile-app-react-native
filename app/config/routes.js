@@ -1,4 +1,5 @@
 
+import { StatusBar } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
 import Home from '../screens/Home';
@@ -13,5 +14,11 @@ export default createStackNavigator({
   },
   CurrencyList: {
     screen: CurrencyList,
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: navigation.state.params.title,
+    }),
   },
+}, {
+  mode: 'modal',
+  cardStyle: { paddingTop: StatusBar.currentHeight },
 });
