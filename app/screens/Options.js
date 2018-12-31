@@ -1,24 +1,25 @@
 /* eslint-disable react/jsx-filename-extension */
 
 import React, { Component } from 'react';
-import { ScrollView, StatusBar } from 'react-native';
-import { IonIcons } from '@expo/vector-icons';
+import { ScrollView, StatusBar, Platform } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 import { ListItem, Separator } from '../components/List';
 
-const ICON_COLOR = '868686';
+const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md';
+const ICON_COLOR = '#868686';
 const ICON_SIZE = 23;
 
 class Options extends Component {
-  handleThemesPress = () => {
+  handlePressThemes = () => {
     // eslint-disable-next-line no-console
     console.log('press themes');
-  }
+  };
 
-  handleSitePress = () => {
+  handlePressSite = () => {
     // eslint-disable-next-line no-console
     console.log('press site');
-  }
+  };
 
   render() {
     return (
@@ -26,16 +27,28 @@ class Options extends Component {
         <StatusBar translucent={false} barStyle="default" />
         <ListItem
           text="Themes"
-          onPress={this.handleThemesPress}
-          customIcon={
-            <IonIcons
-          }
+          onPress={this.handlePressThemes}
+          customIcon={(
+            <Ionicons
+              name={`${ICON_PREFIX}-arrow-forward`}
+              color={ICON_COLOR}
+              size={ICON_SIZE}
+            />
+          )}
         />
         <Separator />
         <ListItem
           text="Fixer.io"
-          onPress={this.handleSitePress}
+          onPress={this.handlePressSite}
+          customIcon={(
+            <Ionicons
+              name={`${ICON_PREFIX}-link`}
+              color={ICON_COLOR}
+              size={ICON_SIZE}
+            />
+          )}
         />
+        <Separator />
       </ScrollView>
     );
   }
