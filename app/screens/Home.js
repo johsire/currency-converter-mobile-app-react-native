@@ -30,11 +30,12 @@ const TEMP_CONVERSION_DATE = new Date();
 class Home extends Component {
   static propTypes = {
     navigation: PropTypes.object,
+    dispatch: PropTypes.func,
   };
 
-  handleChangeText = (amount) => {
-    // TODO: make this work with this.props.dispatch
-    console.log(changeCurrencyAmount(amount));
+  handleChangeText = (text) => {
+    const { dispatch } = this.props;
+    dispatch(changeCurrencyAmount(text));
   };
 
   handlePressBaseCurrency = () => {
@@ -48,8 +49,8 @@ class Home extends Component {
   };
 
   handleSwapCurrency = () => {
-    // TODO: make this work with this.props.dispatch
-    console.log(swapCurrency());
+    const { dispatch } = this.props;
+    dispatch(swapCurrency());
   };
 
   handleOptionsPress = () => {
