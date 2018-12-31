@@ -1,7 +1,7 @@
+
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-filename-extension */
-
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -11,15 +11,16 @@ import moment from 'moment';
 import styles from './styles';
 
 const LastConverted = ({
-  base, quote, conversionRate, date,
+  date, base, quote, conversionRate,
 }) => (
   <Text style={styles.smallText}>
-            1
+    1
     {base}
-            =
+=
     {conversionRate}
     {quote}
-            as of moment(date).format("MMMM D, YYYY")
+as of
+    {moment(date).format('MMMM D, YYYY')}
   </Text>
 );
 
