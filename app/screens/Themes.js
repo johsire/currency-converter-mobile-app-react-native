@@ -1,6 +1,7 @@
 
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ScrollView, StatusBar } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -14,9 +15,13 @@ const styles = EStyleSheet.create({
 });
 
 class Themes extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  }
+
   handleThemePress = (color) => {
-    // eslint-disable-next-line no-console
-    console.log('press theme', color);
+    const { navigation } = this.props;
+    navigation.goBack();
   };
 
   render() {
