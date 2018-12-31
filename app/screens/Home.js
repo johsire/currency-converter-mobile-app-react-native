@@ -7,14 +7,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StatusBar, KeyboardAvoidingView } from 'react-native';
+import { connect } from 'react-redux';
 
 // Rendered Components ----------------------------->>>>>>>>>
-import { Header } from '../components/Header';
-import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
-import { InputWithButton } from '../components/TextInput';
-import { ClearButton } from '../components/Buttons';
+import { Header } from '../components/Header';
 import { LastConverted } from '../components/Text';
+import { Container } from '../components/Container';
+import { ClearButton } from '../components/Buttons';
+import { InputWithButton } from '../components/TextInput';
 
 // Redux- Actions --------------------->>>>>>>>>>>
 import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
@@ -96,4 +97,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect()(Home);
