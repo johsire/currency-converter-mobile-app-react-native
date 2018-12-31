@@ -22,6 +22,8 @@ export default createStackNavigator(
   },
   {
     mode: 'modal',
-    cardStyle: { paddingTop: StatusBar.currentHeight },
+    cardStyle: {
+      paddingTop: StatusBar.currentHeight,
+    },
   },
 );

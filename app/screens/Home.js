@@ -1,4 +1,6 @@
 
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-filename-extension */
 
 // Downloaded/ Imported Dependencies --------------->>>>>>>>>>
@@ -31,18 +33,22 @@ class Home extends Component {
     console.log('change text');
   };
 
-  handlePressQuoteCurrency = () => {
-    const newLocal = this;
-    newLocal.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' });
+  handlePressBaseCurrency = () => {
+    const { navigation } = this.props;
+    navigation.navigate('CurrencyList', { title: 'Base Currency' });
   };
 
-  handlePressBaseCurrency = () => {
-    const newLocal = this;
-    newLocal.props.navigation.navigate('CurrencyList', { title: 'Base Currency' });
+  handlePressQuoteCurrency = () => {
+    const { navigation } = this.props;
+    navigation.navigate('CurrencyList', { title: 'Quote Currency' });
   };
 
   handleSwapCurrency = () => {
-    console.log('press swap currency');
+    console.log('handle swap currency');
+  };
+
+  handleSwapCurrency = () => {
+    console.log('handle swap currency');
   };
 
   handleOptionsPress = () => {
