@@ -1,8 +1,10 @@
 
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-filename-extension */
 
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { FlatList, StatusBar, View } from 'react-native';
 
 import { ListItem, Separator } from '../components/List';
@@ -15,30 +17,31 @@ class CurrencyList extends Component {
     navigation: PropTypes.object,
   };
 
-    handlePress = () => {
-      const newLocal = this;
-      newLocal.props.navigation.goBack(null);
-    };
+  handlePress = () => {
+    const { navigation } = this.props;
+    navigation.goBack(null);
+  };
 
-    render() {
-      return (
-        <View style={{ flex: 1 }}>
-          <StatusBar translucent={false} barStyle="default" />
-          <FlatList
-            data={currencies}
-            renderItem={({ item }) => (
-              <ListItem
-                text={item}
-                selected={item === TEMP_CURRENT_CURRENCY}
-                omPress={this.handlePress}
-              />
-            )}
-            keyExtractor={item => item}
-            ItemSeparatorComponent={Separator}
-          />
-        </View>
-      );
-    }
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <StatusBar translucent={false} barStyle="default" />
+        <FlatList
+          data={currencies}
+          renderItem={({ item }) => (
+            <ListItem
+              text={item}
+              selected={item === TEMP_CURRENT_CURRENCY}
+              onPress={this.handlePress}
+            />
+          )}
+          keyExtractor={item => item}
+          ItemSeparatorComponent={Separator}
+        />
+        {' '}
+      </View>
+    );
+  }
 }
 
 export default CurrencyList;
