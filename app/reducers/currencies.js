@@ -3,12 +3,12 @@
 
 import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY } from '../actions/currencies';
 
-const initialState = {
-  baseCurrency: 'USD',
-  quoteCurrency: 'GBP',
-  amount: 100,
-  conversion: {},
-};
+// const initialState = {
+//   baseCurrency: 'USD',
+//   quoteCurrency: 'GBP',
+//   amount: 100,
+//   conversion: {},
+// };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
